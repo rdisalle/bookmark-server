@@ -10,7 +10,7 @@ bookmarksRouter
     .route('/bookmarks')
     .get((req, res) => {
         res
-          .json(bookmarks);
+          .json(bookmark);
       })
     .post(bodyParser, (req, res) => {
         const { title, rating, description } = req.body;
@@ -91,7 +91,7 @@ bookmarksRouter
                 .send('Bookmark Not Found');
         }
 
-        bookmarks.splice(bookmarkIndex, 1);
+        bookmark.splice(bookmarkIndex, 1);
         
         logger.info(`Bookmark with id ${id} deleted`);
         return res
